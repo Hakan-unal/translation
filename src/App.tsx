@@ -1,31 +1,48 @@
-import { Row, Typography, Select, Space, Col } from "antd";
+import { Row, Typography, Select, Col, Card, Image } from "antd";
 import type { SelectProps } from "antd";
-import { FaFlag } from "react-icons/fa";
+import { CiFlag1 } from "react-icons/ci";
 import { translator } from "./language/translator";
 import { useState } from "react";
 
-const { Title, Paragraph, Text, Link } = Typography;
+import de from "./assets/de.png";
+import en from "./assets/en.jpg";
+import tr from "./assets/tr.png";
+
+const languages = {
+   de: de,
+   en: en,
+   tr: tr,
+};
 
 const options: SelectProps["options"] = [
    {
-      label: <FaFlag />,
+      label: (
+         <>
+            <CiFlag1 /> Turkey (tr)
+         </>
+      ),
       value: "tr",
-      desc: "Turkey (tr)",
    },
    {
-      label: <FaFlag />,
+      label: (
+         <>
+            <CiFlag1 /> English (en)
+         </>
+      ),
       value: "en",
-      desc: "English (en)",
    },
    {
-      label: <FaFlag />,
+      label: (
+         <>
+            <CiFlag1 /> Deutch (de)
+         </>
+      ),
       value: "de",
-      desc: "Deutch (de)",
    },
 ];
 
 const App = () => {
-   const [language, setLanguage] = useState<string>("en");
+   const [language, setLanguage] = useState<string>("tr");
 
    const handleChange = (value: string) => {
       setLanguage(value);
@@ -33,25 +50,25 @@ const App = () => {
 
    return (
       <Row justify={"center"}>
-         <Col span={24}>
-            <Select
-               style={{ width: "100%" }}
-               placeholder="select one country"
-               onChange={handleChange}
-               optionLabelProp="label"
-               options={options}
-               optionRender={(option) => (
-                  <Space>
-                     <span role="img" aria-label={option.data.label}>
-                        {option.data.label}
-                     </span>
-                     {option.data.desc}
-                  </Space>
-               )}
-            />
-         </Col>
-         <Col span={12}>
-            <Text>{translator("test", language)}</Text>
+         <Col span={8}>
+            <Card
+               title={translator("test", language)}
+               cover={
+                  <Image
+                     preview={false}
+                     src={languages[language as keyof typeof languages]}
+                  />
+               }
+            >
+               <Select
+                  value={language}
+                  style={{ width: "100%" }}
+                  placeholder="Select language"
+                  onChange={handleChange}
+                  optionLabelProp="label"
+                  options={options}
+               />
+            </Card>
          </Col>
       </Row>
    );
