@@ -1,0 +1,11 @@
+{
+    "title1": "CRUD Nedir ?",
+    "title2": "Örnekler",
+    "title3": "Açıklama",
+    "paragraph1": "CRUD veri üzerinde yapılan 4 temel işlemi ifade eder. Bu temel işlemler sırasıyla create, read, update ve delete'tir. SQL veya NoSQL olsun veritabanı üzerinde kayıt ekleyip çıkartmak veya eklenen kayıtları düzenlemek için bu http methodları kullanılır. Server'ın önyüz ve veritabanı arasındaki köprü olduğunu düşünürsek bu methodlar aracılığıyla birbirleriyle anlamlı bir ilişki kurabildiği açıktır. Önyüz tarafından gelen post methodu serrver-side tarafında geliştirme yapan kişi için de bunun genel hatlarıyla içerisinde payload taşıyan bir kayıt işlemi olduğu açıktır. REST mimarisi temelinde CRUD'u karıştırmak mümkün olmakla birlikte CRUD daha temel işlemlerin teorik bütünü diyebiliriz ve REST bunun üzerine inşa edilebilir.",
+    "paragraph2": "Ön yüz tarafında formunuz olduğunu düşünün ve bununla birlikte name ve price alanları bulunsun 1 adet string 1 det number type inputunuz var. Form'u submitlediğiniz anda ilgili fonksiyonlar çalıştı ve uygulamanızın server-side tarafına post çağrısı gönderdiniz server tarafında url pathinizle eşleşen payloadınız database üzerinde ilgili tabloya yazılmak üzere yola çıktı diyelim ki products tablosu ve işlemin bu 3 ayağının olumlu olması durumunda önyüze bir başarı responsu'u dönüldü ve süreç tamamlandı. Bu anlatım dışında kalabilecek örnekler haricinde genel kullanım bu şekilde. Products tablosu üzerinde silme işlemi yapmak için ve mevcut datayı önyüze getirip güncellemek için id kullanımı söz konusu. Bu durumlar için server tarafında params veya payloadlı şekilde kullanımlar mevcut. Çünkü daha önceden oluşturulan bir data üzerinde işlem yapmak istiyorsanız bunun veritabanı tarafında oluşturulan sadece o tablodaki dataya özel unique olan bu bilgiye ihtiyacınız var.",
+    "paragraph3": "CREATE: Http methodu olarak POST'tur. Server tarafına bilgi eklemek için kullanılan istektir.",
+    "paragraph4": "READ: Http methodu olarak GET'tir. Server tarafından bilgi çağırmak için kullanılan istektir.",
+    "paragraph5": "UPDATE: Http methodu olarak PUT'tur. Server tarafından var olan bilgiyi güncellemek için kullanılan istektir.",
+    "paragraph6": "DELETE: Http methodu olarak DELETE'tir. Server tarafından var olan bilgiyi silmek için kullanılan istektir."
+}
