@@ -1,4 +1,4 @@
-import { Row, Typography, Select, Col, Card, Image } from "antd";
+import { Row, Select, Col, Card, Image } from "antd";
 import type { SelectProps } from "antd";
 import { CiFlag1 } from "react-icons/ci";
 import { translator } from "./language/translator";
